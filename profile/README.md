@@ -20,3 +20,5 @@ The organization within each repository is streamlined with two tools:
    archives datasets and keeps track of dependencies between all these steps.
    Technicalities that would otherwise discourage good practices
    are automated (and imposed) by RepRepBuild.
+
+Check out the [documentation](https://github.com/reproducible-reporting/templates/blob/main/DOCUMENTATION.md) if you want to get started.
