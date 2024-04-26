@@ -31,18 +31,25 @@ allowing you to check the result, add the modified files and try a new commit.
 You can also fix files before committing with the command: `pre-commit run --all`.
 
 Not all formatting problems can be fixed automatically.
-Try to keep the following in mind when editing.
+Try to keep the following in mind when editing Markdown and LaTeX files:
 
 - We use `.editorconfig` to share the same configuration across different text editors we use.
   Make sure your editor supports this file.
   See https://editorconfig.org/
-- Many errors can be avoided by using a live preview of your Markdown file as you write.
-  Many integrated development environments have this feature.
-  If you're using a more basic editor, the following command can be used
-  to generate a live preview everytime you save the markdown file:
-  ```bash
-  inotifywait . -m --include '.*\.md$' -e close_write | while read path event file; do echo rendering $file; pandoc $file -f gfm -o tmp.pdf --pdf-engine=weasyprint; xdg-open tmp.pdf; done
-  ```
-
+- Many errors can be avoided by using a live preview of your Markdown file as you write,
+  for which there are several options:
+  
+    - Many integrated development environments have this feature.
+    - Documentation written with MkDocs can be live-previewd in a browser with `mkdocs serve`.
+    - If you're using a more basic editor, the following command can be used
+      to generate a live preview everytime you save the markdown file:
+      ```bash
+      inotifywait . -m --include '.*\.md$' -e close_write | while read path event file; do echo rendering $file; pandoc $file -f gfm -o tmp.pdf --pdf-engine=weasyprint; xdg-open tmp.pdf; done
+      ```
 - Put each sentence on its own line.
   This makes reviewing changes a lot easier.
+
+For more details, check out the developmer notes of specific projects:
+
+- [StepUp Core Developer notes](https://reproducible-reporting.github.io/stepup-core/development/)
+- [StepUp RepRep Developer notes](https://reproducible-reporting.github.io/stepup-reprep/development/)
